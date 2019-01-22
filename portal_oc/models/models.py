@@ -27,7 +27,7 @@ class PurchaseOrderMbM(models.Model):
     def _group_expand_stage_id(self, stages, domain, order):
         return stages.search([], order=order)
     stage_id = fields.Many2one(
-        'portal_oc.MbMStage',
+        'portal_oc.stage',
         default=_default_stage,
         group_expand='_group_expand_stage_id')
     state = fields.Selection(related='stage_id.state')
@@ -46,7 +46,7 @@ class SaleOrderMbM(models.Model):
     def _group_expand_stage_id(self, stages, domain, order):
         return stages.search([], order=order)
     stage_id = fields.Many2one(
-        'portal_oc.MbMStage',
+        'portal_oc.stage',
         default=_default_stage,
         group_expand='_group_expand_stage_id')
     state = fields.Selection(related='stage_id.state')
