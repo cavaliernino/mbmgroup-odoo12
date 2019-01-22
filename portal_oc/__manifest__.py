@@ -26,7 +26,7 @@
         # 'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
-        'data/portal_oc_stages',
+        #'data/portal_oc_stages',
     ],
     # only loaded in demonstration mode
     'demo': [
