@@ -25,7 +25,7 @@
     
     <record model="ir.actions.act_window" id="portal_oc.action_mx">
       <field name="name">Portal MbM Mexico</field>
-      <field name="res_model">sales.order</field>
+      <field name="res_model">sale.order</field>
       <field name="view_mode">tree,form</field>
     </record>
     
@@ -49,7 +49,7 @@
     
     <menuitem name="Portal R3" id="portal_oc.menu_r3" action="portal_oc.action_r3"/>
     <menuitem name="Portal MbM Mexico" id="portal_oc.menu_mbm_mx" action="portal_oc.action_mx"/>
-    
+
     <!-- menu categories -->
     <!--
     <menuitem name="Menu 1" id="portal_oc.menu_1" parent="portal_oc.menu_root"/>
