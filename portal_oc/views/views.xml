@@ -16,7 +16,7 @@
     -->
 
     <!-- actions opening views on models -->
-    <!--
+    
     <record model="ir.actions.act_window" id="portal_oc.action_r3">
       <field name="name">Portal R3</field>
       <field name="res_model">purchase.order</field>
@@ -28,7 +28,7 @@
       <field name="res_model">sales.order</field>
       <field name="view_mode">tree,form</field>
     </record>
-    -->
+    
     <!-- server action to the one above -->
     <!--
     <record model="ir.actions.server" id="portal_oc.action_server">
@@ -46,10 +46,10 @@
     -->
 
     <!-- Top menu item -->
-    <!--
+    
     <menuitem name="Portal R3" id="portal_oc.menu_r3" action="portal_oc.action_r3"/>
     <menuitem name="Portal MbM Mexico" id="portal_oc.menu_mbm_mx" action="portal_oc.action_mx"/>
-    -->
+    
     <!-- menu categories -->
     <!--
     <menuitem name="Menu 1" id="portal_oc.menu_1" parent="portal_oc.menu_root"/>
