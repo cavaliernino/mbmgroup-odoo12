@@ -3,22 +3,20 @@
 from odoo import models, fields, api
 
 class MbMStage(models.Model):
-       _name = 'portal_oc.stage'
-       _description = 'MbM Stage'
-       _order = 'sequence,name'
-       name = fields.Char()
-       sequence = fields.Integer(default=10)
-       fold = fields.Boolean()
-       active = fields.Boolean(default=True)
-       state = fields.Selection(
-           [('new','New'),
-            ('open','Open'),
-            ('done','Paid'),
-            ('cancel', 'Cancelled')],
-           default='new',
-       )
-
-
+    _name = 'portal_oc.stage'
+    _description = 'MbM Stage'
+    _order = 'sequence,name'
+    name = fields.Char()
+    sequence = fields.Integer(default=10)
+    fold = fields.Boolean()
+    active = fields.Boolean(default=True)
+    state = fields.Selection(
+        [('new','New'),
+        ('open','Open'),
+        ('done','Paid'),
+        ('cancel','Cancelled')],
+        default='new',
+    )
 class PurchaseOrderMbM(models.Model):
     _inherit = 'purchase.order'
     @api.model
@@ -33,6 +31,10 @@ class PurchaseOrderMbM(models.Model):
         default=_default_stage,
         group_expand='_group_expand_stage_id')
     state = fields.Selection(related='stage_id.state')
+    @api.on_change('stage_id')
+    def onchange_stage_id(self):
+        if self.stage_id.sequence == 20:
+            #create sales order with data
 
 class SaleOrderMbM(models.Model):
     _inherit = 'sale.order'
