@@ -31,10 +31,12 @@ class MbMStage(models.Model):
 #        default=_default_stage,
 #        group_expand='_group_expand_stage_id')
 #    state = fields.Selection(related='stage_id.state')
-#    #@api.on_change('stage_id')
-#    #def onchange_stage_id(self):
-#    #    if self.stage_id.sequence == 20:
-#    #        #create sales order with data
+#    @api.on_change('stage_id')
+#    def onchange_stage_id(self):
+#        if self.stage_id.sequence == 20:
+#            #create sales order with data
+#            admin_user = self.env.ref('base.user_admin')
+#            self.SaleOrder = self.env['sale.order'].sudo(admin_user)
 #
 #class SaleOrderMbM(models.Model):
 #    _inherit = 'sale.order'
