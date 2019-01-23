@@ -31,7 +31,7 @@ class PurchaseOrderMbM(models.Model):
         default=_default_stage,
         group_expand='_group_expand_stage_id')
     state = fields.Selection(related='stage_id.state')
-    @api.on_change('stage_id')
+    @api.onchange('stage_id')
     def onchange_stage_id(self):
         if self.stage_id.sequence == 20:
             #create sales order with data
